@@ -1,3 +1,5 @@
+// Reads the configuration file and saves the information
+
 #include <string>
 
 struct pictogramsettings
