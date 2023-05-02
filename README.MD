@@ -40,6 +40,7 @@ bindsym --locked XF86AudioRaiseVolume exec $volume_up
 bindsym --locked XF86AudioLowerVolume exec $volume_down
 bindsym --locked XF86AudioMute exec $volume_mute
 ```
+Note: I'm using the appropriate function keys for sound/backlight control. If this shouldn't work, try pressing the corresponding key and the function key at once. If that also fails, change the keycombination to `$mod+Alt+Right` or somewhat similar and try again.
 
 As you can see in the config file, I am using the Master control in amixer. There is plenty of discussion, what should be inserted here, but I felt best with Master.
 If you think, the brightness changes too fast, decrease the value after the light command.
