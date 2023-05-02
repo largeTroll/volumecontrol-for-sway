@@ -1,5 +1,3 @@
-Message Box for sway
-
 ## Intention
 This project is intended to provide an executable, that makes the classical audiosymbol when pressing the volume-up key, or any key, that is associated to it. Therefore it reads out the value of the audio device, specified in the config file. Remember, that this program can - up to this stage - only get the volume from `amixer`. If you haven't installed it, the program won't run.
 ### Dependencies
