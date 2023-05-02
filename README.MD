@@ -1,6 +1,6 @@
 Message Box for sway
 
-## Intension
+## Intention
 This project is intended to provide an executable, that makes the classical audiosymbol when pressing the volume-up key, or any key, that is associated to it. Therefore it reads out the value of the audio device, specified in the config file. Remember, that this program can - up to this stage - only get the volume from `amixer`. If you haven't installed it, the program won't run.
 ### Dependencies
 There are some factors, you need to keep attention to: You can only compile and/or run the program if you have already installed GLFW3 AND OpenGL. Also, please place the shader files in a folder called 'res' in the same location as the executable and keep in mind, that I'm using `light` to retrieve the display brightness. If you haven't installed it, please do so and you might want to add your user to the group 'video'.
