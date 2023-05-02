@@ -1,3 +1,5 @@
+// This file should be called main, since it has the drawloop
+
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 

@@ -1,4 +1,5 @@
-// initilizer.h
+// Used to start GLFW and set up the Vertex and Index Buffer for OpenGL
+
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 

@@ -16,8 +16,6 @@ GLFWwindow* startGLFW(uint32_t winsizex, uint32_t winsizey, const char* title)
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
-        // Wenn das Core-Profil angeschaltet ist, muss es ein VAO geben.
-        // Das Compat-Profil erstellt selber eines
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
         // glfw window creation
@@ -47,6 +45,7 @@ GLFWwindow* startGLFW(uint32_t winsizex, uint32_t winsizey, const char* title)
         return window;
 }
 
+// Build a vertexbuffer from a 3 floats
 uint32_t getVertexBuffer3f(float* data, int count)
 {
         // Generate and bind Buffer
@@ -72,6 +71,7 @@ uint32_t getVertexBuffer3f(float* data, int count)
         return buffer;
 }
 
+// Build a vb from 2 floats
 uint32_t getVertexBuffer2f(float* data, int count)
 {
         // Generate and bind Buffer
@@ -97,7 +97,8 @@ uint32_t getVertexBuffer2f(float* data, int count)
         return buffer;
 }
 
-uint32_t getVertexBuffer2f1t(float* data, int count)
+// Build a vb from 2 positions and 2 tex coords
+uint32_t getVertexBuffer2f2t(float* data, int count)
 {
         GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
 
@@ -127,6 +128,7 @@ uint32_t getVertexBuffer2f1t(float* data, int count)
         return buffer;
 }
 
+// Make the indexbufferobject
 uint32_t getIndexBuffer(uint32_t* data, int count)
 {
         // Generate and bind the index buffer
@@ -192,6 +194,7 @@ uint32_t compileShader(const char* filename, uint32_t shadertype)
         return id;
 }
 
+// Compiles and links the three shaders. If you don't have one, pass "\0" as file
 uint32_t getProgram(const char* vertfile, const char* geomfile, const char* fragfile)
 {
         uint32_t program = glCreateProgram();
@@ -224,6 +227,9 @@ uint32_t getProgram(const char* vertfile, const char* geomfile, const char* frag
         return program;
 }
 
+// Loads the positions and indices from pos.h. Needs the mode and a reference to a
+// Vertex Array Object and a Index Buffer Object and the size of the Index Buffer for the
+// draw-call
 void loadVertices(uint8_t num, uint32_t& vao, uint32_t& ibo, uint32_t& size)
 {
         GLCall(glGenVertexArrays(1, &vao));
@@ -252,7 +258,7 @@ void loadVertices(uint8_t num, uint32_t& vao, uint32_t& ibo, uint32_t& size)
         }
         case 3:
         {
-                getVertexBuffer2f1t(barposition, 16);
+                getVertexBuffer2f2t(barposition, 16);
                 ibo = getIndexBuffer(barindex, 6);
 
                 size = 6;

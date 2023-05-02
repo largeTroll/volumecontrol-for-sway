@@ -1,3 +1,7 @@
+// This file contains the pictograms (audio/backlight symbol), as well as
+// for the bar.
+
+// Positions of the audio pictogram
 float audioposition[] = {
         -1.0f,  0.5f, // 0
         -1.0f, -0.5f, // 1
@@ -14,7 +18,7 @@ unsigned int audioindex[] = {
         3, 4, 5
 };
 
-
+// 2D positions for the backlight pictogram
 float lightposition[] = {
         // Frame
         -1.0f,  0.6f, // 00 Outer
@@ -73,7 +77,8 @@ unsigned int lightindex[] = {
         26,27,24
 };
 
-
+// Bar positions, formated like this:
+// vec2 position, float percentage between the two ends, float brightness on that end
 float barposition[] = {
         -0.75f, -0.5f,  0.0f, 0.2f, // 0
         -0.75f, -0.75f, 0.0f, 0.2f, // 1
@@ -81,15 +86,7 @@ float barposition[] = {
          0.75f, -0.5f,  1.0f, 0.9f  // 3
 };
 
-/*
-float barposition[] = {
-        -0.75f, -0.5f,
-        -0.75f, -0.75f,
-         0.75f, -0.75f,
-         0.75f, -0.5f
-};
-*/
-
+// Indices in the bar postions array
 unsigned int barindex[] = {
         0, 1, 2,
         2, 3, 0

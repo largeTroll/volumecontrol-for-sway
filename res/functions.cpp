@@ -1,3 +1,5 @@
+// This file contains the main loop for drawing the symbol and bar.
+
 #include "functions.h"
 
 #include "errorhandling.h"
