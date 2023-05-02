@@ -46,4 +46,6 @@ If you think, the brightness changes too fast, decrease the value after the ligh
 ### Configfile
 I've included a example config file in the root directory in the repository. Up to now, my code looks for the file `/home/$USER/.config/msgbox/config.conf`. As normal for a config file, you uncomment a line with a '#'. For variables,
 
-I'm pretty sure, that this constellation is not perfect, since I'm learning to code, but I'm satisfied with the result.
+
+
+I'm pretty sure, that this program is not perfect, since I'm learning how to code, but I'm satisfied with the result.
